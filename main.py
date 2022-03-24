@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def main():
 
-    return ('Hello!', 204)
+    return ('Hello!', 200)
 
 if __name__ == '__main__':
     PORT = int(os.getenv('PORT')) if os.getenv('PORT') else 8080
