@@ -9,19 +9,11 @@ stages:
 jobs:
   include:
     - stage: "linting"
-      name: "pydocstyle"
-      script:
+      name: "Linting"
+      install:
         - pip install pydocstyle
+        - pip install flake8
+      script:
         - pydocstyle .
-
-    - stage: "linting"
-      name: "flake8"
-      script:
-        - pip install flake8
         - flake8 .
-
-    - stage: "linting"
-      name: "code complexity"
-      script:
-        - pip install flake8
         - flake8 --max-complexity 10 .
