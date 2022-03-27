@@ -23,4 +23,5 @@ jobs:
     - stage: "linting"
       name: "code complexity"
       script:
+        - pip install flake8
         - flake8 --max-complexity 10 .
