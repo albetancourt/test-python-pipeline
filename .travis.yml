@@ -10,12 +10,19 @@ jobs:
   include:
     - stage: "linting"
       name: "Linting"
+      addons:
+        sonarcloud:
+          organization: "albetancourt"
       install:
         - pip install pydocstyle
         - pip install flake8
         - pip install mypy
+        - pip install bandit
         - pip install flask
       script:
+        - sonar-scanner
         - pydocstyle .
         - flake8 --max-complexity 10 .
         - mypy .
+        - bandit -r .
+        - docker run -v ${PWD}:/path zricethezav/gitleaks:latest detect --source="/path" -v
