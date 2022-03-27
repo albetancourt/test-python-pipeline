@@ -1,14 +1,16 @@
 """This is an example script."""
 
 import os
-from flask import Flask, request
+from flask import Flask
 
 app = Flask(__name__)
+
+
 @app.route('/', methods=['POST'])
-
 def main():
-
+    """Create main function."""
     return ('Hello!', 200)
+
 
 if __name__ == '__main__':
     PORT = int(os.getenv('PORT')) if os.getenv('PORT') else 8080
