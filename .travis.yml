@@ -17,6 +17,5 @@ jobs:
         - pip install flask
       script:
         - pydocstyle .
-        - flake8 .
         - flake8 --max-complexity 10 .
         - mypy .
