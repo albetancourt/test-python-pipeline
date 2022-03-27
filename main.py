@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 
 def main():
-    """Create main function."""
+
     return ('Hello!', 200)
 
 if __name__ == '__main__':
