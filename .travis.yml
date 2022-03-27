@@ -19,3 +19,4 @@ jobs:
       name: "pydocstyle"
       script:
         - docker run --rm -v $(pwd):/data cytopia/pydocstyle .
+
