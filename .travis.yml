@@ -13,3 +13,9 @@ jobs:
       script:
         - pip install pydocstyle
         - pydocstyle .
+
+    - stage: "linting"
+      name: "flake8"
+      script:
+        - pip install flake8
+        - flake8 .
